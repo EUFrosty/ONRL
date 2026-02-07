@@ -5,6 +5,7 @@
 #include "unit.h"
 #include <iostream>
 #include <optional>
+#include <cstdint>
 
 
 #define GW_OFF_X 16
@@ -36,10 +37,10 @@ enum class PLAYER_ACTION {
 
 PLAYER_ACTION get_player_action(const sf::Event& event) {
     switch (event.key.code) {
-        case sf::Keyboard::K:       return PLAYER_ACTION::MOVE_UP;
-        case sf::Keyboard::J:       return PLAYER_ACTION::MOVE_DOWN;
-        case sf::Keyboard::H:       return PLAYER_ACTION::MOVE_LEFT;
-        case sf::Keyboard::L:       return PLAYER_ACTION::MOVE_RIGHT;
+        case sf::Keyboard::W:       return PLAYER_ACTION::MOVE_UP;
+        case sf::Keyboard::S:       return PLAYER_ACTION::MOVE_DOWN;
+        case sf::Keyboard::A:       return PLAYER_ACTION::MOVE_LEFT;
+        case sf::Keyboard::D:       return PLAYER_ACTION::MOVE_RIGHT;
         case sf::Keyboard::Space:   return PLAYER_ACTION::WAIT;
         case sf::Keyboard::Escape:  return PLAYER_ACTION::CANCEL;
         default: return PLAYER_ACTION::NONE;
